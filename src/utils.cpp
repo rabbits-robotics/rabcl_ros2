@@ -7,8 +7,8 @@ void Utils::CmdMsgToInfo(const attracts_msgs::msg::AttractsCommand& msg, rabcl::
     info.chassis_vel_x_ = msg.chassis_vel.x;
     info.chassis_vel_y_ = msg.chassis_vel.y;
     info.chassis_vel_z_ = msg.chassis_vel.z;
-    info.pitch_vel_ = msg.pitch_pos;
-    info.yaw_vel_ = msg.yaw_pos;
+    info.pitch_pos_ = msg.pitch_pos;
+    info.yaw_pos_ = msg.yaw_pos;
 
     info.load_mode_ = msg.load_mode;
     info.fire_mode_ = msg.fire_mode;
