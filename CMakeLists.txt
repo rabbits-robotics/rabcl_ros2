@@ -46,7 +46,15 @@ ament_export_libraries(rabcl_ros2)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
+  set(ament_cmake_copyright_FOUND TRUE)
+  set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
+
+  find_package(ament_cmake_gtest REQUIRED)
+
+  ament_add_gtest(test_utils test/test_utils.cpp)
+  ament_target_dependencies(test_utils attracts_msgs rabcl)
+  target_link_libraries(test_utils rabcl_ros2)
 endif()
 
 ament_package()
