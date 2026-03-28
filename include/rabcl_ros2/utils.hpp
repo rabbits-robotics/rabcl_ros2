@@ -3,7 +3,7 @@
 
 #include <cmath>
 
-#include "attracts_msgs/msg/attracts_command.hpp"
+#include <attracts_msgs/msg/attracts_command.hpp>
 #include "rabcl/utils/type.hpp"
 
 namespace rabcl_ros2
