@@ -12,7 +12,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 find_package(ament_cmake REQUIRED)
-find_package(attracts_msgs REQUIRED)
+find_package(rabbits_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(rabcl REQUIRED)
 
@@ -20,7 +20,7 @@ add_library(rabcl_ros2 SHARED
   src/utils.cpp
 )
 ament_target_dependencies(rabcl_ros2
-  attracts_msgs
+  rabbits_msgs
   sensor_msgs
   rabcl
 )
@@ -55,7 +55,7 @@ if(BUILD_TESTING)
   find_package(ament_cmake_gtest REQUIRED)
 
   ament_add_gtest(test_utils test/test_utils.cpp)
-  ament_target_dependencies(test_utils attracts_msgs sensor_msgs rabcl)
+  ament_target_dependencies(test_utils rabbits_msgs sensor_msgs rabcl)
   target_link_libraries(test_utils rabcl_ros2)
 endif()
 

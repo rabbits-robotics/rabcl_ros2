@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "attracts_msgs/msg/attracts_command.hpp"
+#include "rabbits_msgs/msg/attracts_command.hpp"
 #include "rabcl/utils/type.hpp"
 #include "rabcl_ros2/utils.hpp"
 
@@ -9,7 +9,7 @@ namespace rabcl_ros2
 
 TEST(UtilsTest, CmdMsgToInfoAllFields)
 {
-  attracts_msgs::msg::AttractsCommand msg;
+  rabbits_msgs::msg::AttractsCommand msg;
   msg.chassis_vel.x = 1.0;
   msg.chassis_vel.y = 2.0;
   msg.chassis_vel.z = 3.0;
@@ -36,7 +36,7 @@ TEST(UtilsTest, CmdMsgToInfoAllFields)
 
 TEST(UtilsTest, CmdMsgToInfoZeroValues)
 {
-  attracts_msgs::msg::AttractsCommand msg;
+  rabbits_msgs::msg::AttractsCommand msg;
   rabcl::Info info;
   Utils::CmdMsgToInfo(msg, info);
 

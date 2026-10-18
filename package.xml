@@ -11,7 +11,7 @@
 
   <exec_depend>rosidl_default_runtime</exec_depend>
 
-  <depend>attracts_msgs</depend>
+  <depend>rabbits_msgs</depend>
   <depend>rabcl</depend>
 
   <test_depend>ament_lint_auto</test_depend>
