@@ -1,9 +1,8 @@
 # rabcl_ros2
+[![CI](https://github.com/rabbits-robotics/rabcl_ros2/actions/workflows/ci.yml/badge.svg)](https://github.com/rabbits-robotics/rabcl_ros2/actions/workflows/ci.yml)
 
 Rabbits Common Library の ROS 2 向けラッパー。ROS 2 のメッセージと [rabcl](https://github.com/rabbits-robotics/rabcl) の `rabcl::Info` を相互に変換する。
 rabcl 自体は ROS 2 に依存しないので、ROS 2 固有の変換だけをここに置く。
-
-[![CI](https://github.com/rabbits-robotics/rabcl_ros2/actions/workflows/ci.yml/badge.svg)](https://github.com/rabbits-robotics/rabcl_ros2/actions/workflows/ci.yml)
 
 ## 構成
 
@@ -27,6 +26,8 @@ colcon build --packages-select rabcl_ros2
 colcon test --packages-select rabcl_ros2
 colcon test-result --verbose
 ```
+
+テストは `test/` に gtest で置いている。rabcl 系のリポジトリはユニットテストを必ず書き、CI で実行する（handbook の [common-lib.md](https://github.com/rabbits-robotics/.github/blob/main/docs/common-lib.md)）。
 
 ## ライセンス
 
