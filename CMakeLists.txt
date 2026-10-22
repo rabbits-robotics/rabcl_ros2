@@ -17,6 +17,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(rabcl REQUIRED)
 
 add_library(rabcl_ros2 SHARED
+  src/convert.cpp
   src/utils.cpp
 )
 ament_target_dependencies(rabcl_ros2
@@ -57,6 +58,10 @@ if(BUILD_TESTING)
   ament_add_gtest(test_utils test/test_utils.cpp)
   ament_target_dependencies(test_utils rabbits_msgs sensor_msgs rabcl)
   target_link_libraries(test_utils rabcl_ros2)
+
+  ament_add_gtest(test_convert test/test_convert.cpp)
+  ament_target_dependencies(test_convert rabbits_msgs sensor_msgs rabcl)
+  target_link_libraries(test_convert rabcl_ros2)
 endif()
 
 ament_package()
