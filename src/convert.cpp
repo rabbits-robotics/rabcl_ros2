@@ -87,6 +87,14 @@ void Convert::ReferenceToChassisVel(
   vel.wz = static_cast<float>(msg.chassis_vel.z);
 }
 
+void Convert::ReferenceToBodyPose(
+  const rabbits_msgs::msg::ReferenceCommand & msg, rabcl::protocol::BodyPose & pose)
+{
+  pose.height = msg.body_height;
+  pose.roll = msg.body_roll;
+  pose.pitch = msg.body_pitch;
+}
+
 uint8_t Convert::ReferenceToJointCmds(
   const rabbits_msgs::msg::ReferenceCommand & msg, const std::vector<std::string> & names,
   rabcl::protocol::JointCmd * out, uint8_t max)

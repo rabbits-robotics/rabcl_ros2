@@ -32,6 +32,10 @@ public:
   static void ReferenceToChassisVel(
     const rabbits_msgs::msg::ReferenceCommand & msg, rabcl::protocol::ChassisVel & vel);
 
+  // body_height / body_roll / body_pitch → BodyPose
+  static void ReferenceToBodyPose(
+    const rabbits_msgs::msg::ReferenceCommand & msg, rabcl::protocol::BodyPose & pose);
+
   // joint_name を names の添字（関節番号）に変換して out に詰める。無い名前は読み飛ばす。
   // 戻り値は詰めた数（max まで）
   static uint8_t ReferenceToJointCmds(

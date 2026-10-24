@@ -6,6 +6,7 @@
 namespace rabcl_ros2
 {
 
+using rabcl::protocol::BodyPose;
 using rabcl::protocol::ChassisVel;
 using rabcl::protocol::Imu;
 using rabcl::protocol::JointCmd;
@@ -95,6 +96,19 @@ TEST(Convert, ReferenceToChassisVelCopiesVector)
   EXPECT_FLOAT_EQ(vel.vx, 0.5f);
   EXPECT_FLOAT_EQ(vel.vy, -0.25f);
   EXPECT_FLOAT_EQ(vel.wz, 1.5f);
+}
+
+TEST(Convert, ReferenceToBodyPoseCopiesFields)
+{
+  rabbits_msgs::msg::ReferenceCommand msg;
+  msg.body_height = 0.5;
+  msg.body_roll = 0.1;
+  msg.body_pitch = -0.2;
+  BodyPose pose = {};
+  Convert::ReferenceToBodyPose(msg, pose);
+  EXPECT_FLOAT_EQ(pose.height, 0.5f);
+  EXPECT_FLOAT_EQ(pose.roll, 0.1f);
+  EXPECT_FLOAT_EQ(pose.pitch, -0.2f);
 }
 
 TEST(Convert, ReferenceToJointCmdsMapsNames)
